@@ -22,6 +22,7 @@ public class Car {
 
 	@Autowired
 	public void setEngine(MusicSystem musicSystem) {
+		System.out.println("Putting music system into the car.");
 		this.musicSystem = musicSystem;
 	}
 
