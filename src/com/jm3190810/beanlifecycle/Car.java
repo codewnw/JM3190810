@@ -1,4 +1,7 @@
-package com.jm3190810.di.di01;
+package com.jm3190810.beanlifecycle;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,10 +15,6 @@ public class Car {
 		System.out.println("Driving car at speed " + engine.getSpeed());
 	}
 
-//	public Car() {
-//		System.out.println("Blank Car is being manufactured.");
-//	}
-
 	@Autowired
 	private Car(Engine engine) {
 		System.out.println("Car is being manufactured.");
@@ -23,4 +22,13 @@ public class Car {
 		this.engine = engine;
 	}
 
+	@PostConstruct
+	public void afterCarConstruction() {
+		System.out.println("Notifying the registered user...");
+	}
+
+	@PreDestroy
+	public void beforeCarDestruction() {
+		System.out.println("Removing engine.");
+	}
 }

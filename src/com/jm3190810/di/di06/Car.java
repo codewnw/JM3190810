@@ -1,6 +1,7 @@
-package com.jm3190810.di.di01;
+package com.jm3190810.di.di06;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,12 +13,8 @@ public class Car {
 		System.out.println("Driving car at speed " + engine.getSpeed());
 	}
 
-//	public Car() {
-//		System.out.println("Blank Car is being manufactured.");
-//	}
-
 	@Autowired
-	private Car(Engine engine) {
+	public Car(@Qualifier("fordEngine") Engine engine) {
 		System.out.println("Car is being manufactured.");
 		System.out.println("Putting engine into the car.");
 		this.engine = engine;
