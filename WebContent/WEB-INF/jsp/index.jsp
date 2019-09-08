@@ -10,5 +10,7 @@
 	<h1>Welcome home...</h1>
 	<a href="contact-us">Contact Us</a>
 	<a href="greet-me">Greet Me</a>
+	<a href="login">Login</a>
+	<a href="order/101/item/10/view">Login</a>
 </body>
 </html>
