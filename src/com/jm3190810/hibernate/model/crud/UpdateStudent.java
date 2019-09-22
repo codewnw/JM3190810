@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.jm3190810.hibernate.model.Student;
 
-public class SaveStudent {
+public class UpdateStudent {
 	public static void main(String[] args) {
 
 		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml")
@@ -17,11 +17,8 @@ public class SaveStudent {
 		try {
 			session.beginTransaction();
 
-			Student student = new Student();
-			student.setRollNumber(2L);
-			student.setName("Rohit");
-			
-			Long rollNumber = (Long)session.save(student);
+			Student student = session.get(Student.class, 2L);
+			student.setName("Rohit Sharma");
 
 			session.getTransaction().commit();
 		} finally {
