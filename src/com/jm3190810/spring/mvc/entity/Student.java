@@ -2,27 +2,22 @@ package com.jm3190810.spring.mvc.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "JM3190810_STUDENT")
+@Table(name = "JM3190810_STUDENT_MVC")
 public class Student {
 
 	@Id
-	@Column(name = "roll_number")
-	private long rollNumber;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private long id;
 
 	@Column(name = "name")
 	private String name;
-
-	public long getRollNumber() {
-		return rollNumber;
-	}
-
-	public void setRollNumber(long rollNumber) {
-		this.rollNumber = rollNumber;
-	}
 
 	public String getName() {
 		return name;
@@ -32,9 +27,17 @@ public class Student {
 		this.name = name;
 	}
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
-		return "Student [rollNumber=" + rollNumber + ", name=" + name + "]";
+		return "Student [id=" + id + ", name=" + name + "]";
 	}
 
 }

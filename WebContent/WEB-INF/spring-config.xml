@@ -42,7 +42,6 @@
 		<property name="maxIdleTime" value="50000" />
 	</bean>
 
-
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
@@ -57,6 +56,7 @@
 			</props>
 		</property>
 	</bean>
+	
 	<bean id="myTransactionMgr"
 		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
