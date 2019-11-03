@@ -10,6 +10,7 @@ public class HomeController {
 	@GetMapping(path = "/")
 	public String showHomePage() {
 		System.out.println("Welcome...");
+		//int i = 10/0;
 		return "index";
 	}
 
